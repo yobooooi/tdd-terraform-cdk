@@ -1,0 +1,37 @@
+========================================================================================================
+
+  Your cdktf Python project is ready!
+
+  cat help                Prints this message
+
+  Compile:
+    pipenv run ./main.py  Compile and run the python code.
+
+  Synthesize:
+    cdktf synth           Synthesize Terraform resources to cdktf.out/
+
+  Diff:
+    cdktf diff            Perform a diff (terraform plan) for the given stack
+
+  Deploy:
+    cdktf deploy          Deploy the given stack
+
+  Destroy:
+    cdktf destroy         Destroy the given stack
+
+  Use Prebuilt Providers:
+
+  You can add one or multiple of the prebuilt providers listed below:
+
+  npm install -a @cdktf/provider-aws
+  npm install -a @cdktf/provider-google
+  npm install -a @cdktf/provider-azurerm
+  npm install -a @cdktf/provider-docker
+  npm install -a @cdktf/provider-github
+  npm install -a @cdktf/provider-null
+
+  Check for an up to date list here https://github.com/terraform-cdk-providers
+
+  Alternatively, you can also build the provider bindings yourself:
+
+========================================================================================================
