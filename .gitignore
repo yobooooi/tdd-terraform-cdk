@@ -5,3 +5,4 @@ imports/*
 cdktf.out
 terraform.tfstate*
 node_modules/
+.vscode
