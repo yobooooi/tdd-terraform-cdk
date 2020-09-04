@@ -3,8 +3,8 @@ import configparser
 import json
 
 from constructs import Construct
-from cdktf import App, TerraformStack
-from imports.aws import AwsProvider, Instance, IamRole, IamRolePolicy, IamRolePolicyAttachment, IamInstanceProfile
+from cdktf import App, TerraformStack, DataTerraformRemoteStateS3, S3Backend
+from imports.aws import AwsProvider, Instance, IamRole, IamRolePolicy, IamRolePolicyAttachment, IamInstanceProfile, DataAwsS3BucketObject
 
 
 class MyStack(TerraformStack):
@@ -18,6 +18,9 @@ class MyStack(TerraformStack):
 
         # creating a provider construct
         AwsProvider(self, 'Aws', region='eu-west-1', profile='synthesis-internal-dev')
+
+        # initialising backend
+        S3Backend(self, profile='synthesis-internal-dev', bucket='cdktf-s3backend', key='cdktf-instance', region='eu-west-1')
 
         # reading JSON templates to create sts assuume role
         with open('templates/assume_role_policy.json') as data:
